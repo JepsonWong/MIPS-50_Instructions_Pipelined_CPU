@@ -1,0 +1,21 @@
+  beq $0 , $0 , 1   lw $s2 ,  0 ( $t3)
+lw $s3 ,  4 ($t3)
+addu $s2 , $s2 , $0
+addu $s3 , $s3 , $0
+addu $s1 , $s2 , $s3
+lw $s5 ,  0 ($s4)
+sw $s6 ,  4 ($s4)
+
+ori $s7 , $s2 , 20
+lw $t0 ,  8 ($s4)
+lw $t1 ,  8 ($s4)
+addu $t4 , $t0 , $t1
+subu $t2 , $t0 , $t1
+
+ori $s0 , $t4 , 20 
+sw $s2 ,  8 ($t3)
+sw $s3 ,  12($t3)
+sw $t0 ,  12($s4)
+sw $t1 ,  16($s4)
+lui $t5 , 20
+lui $t6 , 20

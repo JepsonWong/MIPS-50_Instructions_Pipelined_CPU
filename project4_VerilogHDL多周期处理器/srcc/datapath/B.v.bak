@@ -1,0 +1,12 @@
+module b(RD2,clk,B);
+  input [31:0] RD2;
+  input clk;
+  output [31:0] B;
+  
+  always @ (posedge clk)
+  begin
+    B<=RD2;
+  end
+  
+endmodule
+  

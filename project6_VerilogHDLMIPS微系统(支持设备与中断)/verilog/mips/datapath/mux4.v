@@ -1,0 +1,19 @@
+module mux4(a,b,c,d,s,y);
+parameter size_data=5;
+input [size_data-1:0] a,b,c,d;
+input [1:0] s;
+output [size_data-1:0] y;
+
+reg [size_data-1:0] y1;
+assign y=y1;
+  
+always @ (s or a or b or c or d)
+begin
+  case(s)
+    2'b00:y1<=a;
+    2'b01:y1<=b;
+    2'b10:y1<=c;
+    2'b11:y1<=d;
+  endcase
+end
+endmodule

@@ -1,0 +1,25 @@
+module test();
+  reg clk;
+  reg rst;
+  reg [31:0] din;
+  wire [7:0]dou,d;
+  
+  
+  MINU MINI_MACHINE(din,clk,rst);
+  
+  initial begin
+    clk=0;
+    mips_rst=0;
+    timer_rst=0;
+    #10 mips_rst=1;#10 timer_rst=1;
+    #20 mips_rst=0;#20 timer_rst=0;
+    #20000
+    $stop;
+  end
+   
+  always  
+    #50 clk = ~clk ;
+  
+  
+endmodule
+

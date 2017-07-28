@@ -1,0 +1,24 @@
+module test();
+  reg clk;
+  reg mips_rst;
+  integer i=0;
+  
+  datapath DATAPATH(clk,mips_rst);
+  
+  initial begin
+    clk=0;
+    mips_rst=0;
+    #10 mips_rst=1;
+    #20 mips_rst=0;
+    
+    
+    //#60000
+    //$stop;
+  end
+  always @ (posedge clk)
+  i<=i+1; 
+  always  
+    #50 clk = ~clk;
+  
+  
+endmodule
